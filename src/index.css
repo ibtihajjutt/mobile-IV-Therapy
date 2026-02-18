@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: theme('fontFamily.sans');
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: theme('colors.primary.dark');
+    background-color: theme('colors.primary.white');
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-bold;
+  }
+
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-12 md:py-16 lg:py-24;
+  }
+
+
+
+  /* Manual Utility Classes for Colors (Fallback) */
+  .text-primary-dark {
+    color: #1E1B4B !important;
+  }
+
+  .text-primary-purple {
+    color: #8B5CF6 !important;
+  }
+
+  .bg-primary-dark {
+    background-color: #1E1B4B !important;
+  }
+
+  .bg-primary-purple {
+    background-color: #8B5CF6 !important;
+  }
+
+  /* Gradients */
+  .text-gradient-purple {
+    background: linear-gradient(to right, #8B5CF6, #1E1B4B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-gradient-purple {
+    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+    color: theme('colors.white');
+    font-family: theme('fontFamily.heading');
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s;
+    transform: translateY(0);
+  }
+
+  .btn-primary:hover {
+    background-color: theme('colors.brand.hover');
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transform: translateY(-2px);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    background-color: theme('colors.white');
+    color: theme('colors.primary.dark');
+    font-family: theme('fontFamily.heading');
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    border: 2px solid theme('colors.primary.dark');
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background-color: theme('colors.primary.dark');
+    color: theme('colors.white');
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+}
